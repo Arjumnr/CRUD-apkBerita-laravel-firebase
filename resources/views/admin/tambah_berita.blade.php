@@ -279,7 +279,7 @@
                         <div class="box-header">
                         </div><!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" action="" method="post">
+                        <form role="form" action="store" method="post">
                           @csrf
                           <div class="box-body">
                             <div class="form-group">

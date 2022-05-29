@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Kreait\Firebase\Contract\Database;
+use Carbon\Carbon;
 
 class BeritaController extends Controller
 {
@@ -14,7 +15,8 @@ class BeritaController extends Controller
     }
     public function dataBerita()
     {
-        return view('admin.databerita'); 
+        $berita = $this->database->getReference($this->tableName)->getValue();
+        return view('admin.databerita' , compact('berita'));
     }
 
     public function create()
@@ -23,12 +25,13 @@ class BeritaController extends Controller
     }
 
     public function strore(Request $request){
-
-        
+       
+        $created_at = Carbon::today()->toDateString();
+    
         $pos_data = [
             'judul' => $request->judul,
             'gambar' => $request->gambar,
-            'tanggal_buat' => $request->tanggal_buat,
+            'tanggal_buat' => $created_at,
 
         ];
 

@@ -18,8 +18,9 @@ use App\Http\Controllers\BeritaController;
 
 
 Route::group(['prefix' => '/berita'], function(){
-    
+
     Route::get('/tambah-berita',[BeritaController::class, 'create'])->name('tambahBerita');
+    Route::post('/store',[BeritaController::class, 'strore'])->name('storeBerita');
     
     // Route::get('/',[BeritaController::class, 'berita'])->name('DataBerita');
     // Route::get('/edit/{id}',[BeritaController::class, 'edit'])->name('edit');

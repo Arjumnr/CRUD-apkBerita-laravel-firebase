@@ -372,34 +372,26 @@
                         </tr>
                       </thead>
 
-                     {{-- <tbody>
-                       @forelse ($data as $key => $row)
-                       <tr>
-                         <td>
+                     <tbody>
+                      @php
+                        $no = 1;
+                      @endphp
 
-                         </td>
+                      @foreach ($berita as $key => $row)
+                       <tr>
+                          <th scope="row">{{ $no++ }}</th>
+                          <td> {{ $row['judul'] }} </td>
+                          <td> {{ $row['gambar'] }} </td>
+                          <td> {{ $row['tanggal_buat'] }} </td>
+                          <td>
+                            <a href="/berita/edit/"><button class="btn btn-primary">Edit</button></a>
+                            <a href="/berita/hapus/"><button class="btn btn-danger">Hapus</button></a>
+                        </td>
                        </tr>
-                       @empty
-                     </tbody> --}}
-                      //changeee
-                      {{-- <tbody>
-                        @php
-                            $a = 1;
-                        @endphp
-                          @foreach ($data as $row)
-                              <tr>
-                                  <th scope="row">{{ $a++ }}</th>
-                                  <td>{{ $row->judul }}</td>
-                                  <td>{{ $row->deskripsi }}</td>
-                                  <td>{{ $row->gambar }}</td>
-                                  <td>{{ $row->created_at }}</td>
-                                  <td>
-                                      <a href="/berita/edit/{{ $row->id }}"><button class="btn btn-primary">Edit</button></a>
-                                      <a href="/berita/hapus/{{ $row->id }}"><button class="btn btn-danger">Hapus</button></a>
-                                  </td>
-                            </tr>
-                          @endforeach
-                      </tbody> --}}
+                      @endforeach
+                     </tbody>
+                  
+                      
                     </table><!-- /.table -->
                   </div><!-- /.mail-box-messages -->
                 </div><!-- /.box-body -->
