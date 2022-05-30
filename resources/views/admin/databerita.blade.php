@@ -234,14 +234,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Baharuddin</span>
+                  <span class="hidden-xs">Admin</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Baharuddin - Web Developer
+                      Admin - Web Developer
                       <small>Member since Mei. 2022</small>
                     </p>
                   </li>
@@ -377,18 +377,22 @@
                         $no = 1;
                       @endphp
 
-                      @foreach ($berita as $key => $row)
+                      @forelse ($berita as $key => $row)
                        <tr>
                           <th scope="row">{{ $no++ }}</th>
                           <td> {{ $row['judul'] }} </td>
                           <td> {{ $row['gambar'] }} </td>
                           <td> {{ $row['tanggal_buat'] }} </td>
                           <td>
-                            <a href="/berita/edit/"><button class="btn btn-primary">Edit</button></a>
-                            <a href="/berita/hapus/"><button class="btn btn-danger">Hapus</button></a>
+                            <a href="/berita/edit/{{ $key }}"><button class="btn btn-primary">Edit</button></a>
+                            <a href="/berita/hapus/{{ $key }}"><button class="btn btn-danger">Hapus</button></a>
                         </td>
                        </tr>
-                      @endforeach
+                      @empty
+                        <tr>
+                          <td colspan="5" class="text-center">Tidak ada data</td>
+                        </tr>
+                      @endforelse
                      </tbody>
                   
                       

@@ -21,13 +21,15 @@ Route::group(['prefix' => '/berita'], function(){
 
     Route::get('/tambah-berita',[BeritaController::class, 'create'])->name('tambahBerita');
     Route::post('/store',[BeritaController::class, 'strore'])->name('storeBerita');
+    Route::get('/edit/{id}',[BeritaController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}',[BeritaController::class, 'update'])->name('update');
+    Route::get('/hapus/{id}',[BeritaController::class, 'delete'])->name('delete');
+
     
     // Route::get('/',[BeritaController::class, 'berita'])->name('DataBerita');
-    // Route::get('/edit/{id}',[BeritaController::class, 'edit'])->name('edit');
     // Route::post('/update/{id}', [BeritaController::class, 'update'])->name('update');
     // Route::get('/tambah-berita',[BeritaController::class, 'create'])->name('tambahBerita');
     // Route::post('/insert',[BeritaController::class, 'insert'])->name('insert');
-    // Route::get('/hapus/{id}',[BeritaController::class, 'hapus'])->name('hapus');
 });
 
 // Route::group(['prefix' => '/komentar'], function(){

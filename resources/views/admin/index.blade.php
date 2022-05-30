@@ -313,7 +313,7 @@
               </a>
             </li>
             <li>
-              <a href="/berita/">
+              <a href="berita">
                 <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>Berita</span>
                 <small class="label pull-right bg-red"></small>
               </a>

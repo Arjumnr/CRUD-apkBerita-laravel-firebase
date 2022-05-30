@@ -1,3 +1,5 @@
+{{-- @extends('firebase.app') --}}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -254,23 +256,7 @@
                   </div><!-- /.box-tools --> --}}
                 </div><!-- /.box-header -->
                 <div class="box-body no-padding">
-                  {{-- <div class="mailbox-controls">
-                    <!-- Check all button -->
-                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>
-                    <div class="btn-group">
-                      <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                      <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                      <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                    </div><!-- /.btn-group -->
-                    <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                    <div class="pull-right">
-                      1-50/200
-                      <div class="btn-group">
-                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
-                      </div><!-- /.btn-group -->
-                    </div><!-- /.pull-right -->
-                  </div> --}}
+                 
                   <h2 class="text-center"><b>Edit data</b></h2>
                   <div class="row">
                     <!-- left column -->
@@ -280,34 +266,33 @@
                         <div class="box-header">
                         </div><!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" action="/berita/update/{{ $data->id }} " method="post">
+                        <form role="form" action="{{route('update', $key)}}" method="post">
                           @csrf
+                          @method('PUT')
+
                           <div class="box-body">
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Judul Berita</label>
-                              <input type="text" value="{{ $data->judul }}" name= "judul" class="form-control" id="exampleInputEmail1" placeholder="Masukan Judul">
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputPassword1">Isi Artikel</label>
-                              <textarea name="deskrpsi" id="summernote">{{ $data->deskripsi }}</textarea>
-                            <div id="summernote"></div>
-                              
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputFile">Gambar</label>
-                              <input type="file" value="{{ $data->gambar}}" name="gambar" id="exampleInputFile">
+                              <label for="exampleInputJudul">Judul Berita</label>
+                              <input type="text" value="{{ $edit_data['judul'] }}" name= "judul" class="form-control" id="exampleInputJudul" placeholder="Masukan Judul">
                             </div>
 
                             <div class="form-group">
-                              <label for="exampleInputPassword1">Tanggal</label>
-                              <input type="text" value="{{ $data->created_at}}" name="created_at" class="form-control" id="exampleInputPassword1" placeholder="Deskripsi">
+                              <label for="exampleInputLink">Judul Berita</label>
+                              <input type="url" value="{{ $edit_data['link'] }}" name= "link" class="form-control" id="exampleInputLink" placeholder="Masukan Judul">
                             </div>
+                              
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputGambar">Gambar</label>
+                              <input type="url" value="{{ $edit_data['gambar']}}" name="gambar"  class="form-control" id="exampleInputGambar">
+                            </div>
+
                             
                           </div><!-- /.box-body -->
         
                           <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="berita/berita" class="btn btn-primary">Cencel</a>
+                            <a href="berita" class="btn btn-primary">Cencel</a>
                           </div>
                         </form>
                       </div><!-- /.box -->

@@ -244,32 +244,9 @@
               <div class="box box-primary">
                 <div class="box-header with-border">
                   
-                  {{-- <div class="box-tools pull-right">
-                    <div class="has-feedback">
-                      <input type="text" class="form-control input-sm" placeholder="Search Mail"/>
-                      <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                    </div>
-                  </div><!-- /.box-tools --> --}}
-                </div><!-- /.box-header -->
+                
                 <div class="box-body no-padding">
-                  {{-- <div class="mailbox-controls">
-                    <!-- Check all button -->
-                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>
-                    <div class="btn-group">
-                      <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                      <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                      <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                    </div><!-- /.btn-group -->
-                    <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                    <div class="pull-right">
-                      1-50/200
-                      <div class="btn-group">
-                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
-                      </div><!-- /.btn-group -->
-                    </div><!-- /.pull-right -->
-                  </div> --}}
-                  {{-- <h2 class="text-center">Tambah Berita</h2> --}}
+                
 
                   <div class="row">
                     <!-- left column -->
@@ -285,6 +262,10 @@
                             <div class="form-group">
                               <label for="exampleInputEmail1">Judul Berita</label>
                               <input type="text" name= "judul" class="form-control" id="exampleInputEmail1" placeholder="Masukan Judul">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputLink">Link Berita</label>
+                              <input type="text" name= "link" class="form-control" id="exampleInputLink" placeholder="Masukan Link Berita">
                             </div>
                             
                             <div class="form-group">
