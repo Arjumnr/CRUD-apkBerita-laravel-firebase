@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\LaporanController;
 
 
 /*
@@ -38,11 +39,12 @@ Route::group(['prefix' => '/berita'], function(){
 //     Route::get('/hapus/{id}',[Komentar::class, 'hapus'])->name('hapus');
 // });
 
-// Route::group(['prefix' => '/cekfakta'], function(){
-//     Route::get('/', [ControllerFakta::class, 'index'])->name('index');
-//     Route::post('/keterangan/{id}',[ControllerFakta::class, 'keterangan'])->name('keterangan');
-// });
+Route::group(['prefix' => '/laporan'], function(){
+    Route::get('/',[LaporanController::class, 'laporan_data'])->name('laporan_data');
+    Route::post('/cekBerita/{id}',[LaporanController::class, 'cekBerita'])->name('cekBerita');
+});
 
 Route::get('/',[DashboardController::class, 'index'])->name('dasdboard');
 Route::get('/berita',[BeritaController::class, 'dataBerita'])->name('dataBerita');
+Route::get('/laporan',[LaporanController::class, 'laporan_data'])->name('laporan_data');
 

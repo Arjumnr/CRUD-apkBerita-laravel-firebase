@@ -1,10 +1,8 @@
-{{-- @extends('firebase.app') --}}
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Admin | Tambah Data</title>
+    <title>Admin | Cek Fakta</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -28,9 +26,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
-
-    
   </head>
   <body class="skin-blue">
     <div class="wrapper">
@@ -139,7 +134,7 @@
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      AdminLTE Pierce - Web Developer
+                      AdminLTE - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -199,7 +194,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
-              <a href="/dasdboard">
+              <a href="/">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
@@ -215,7 +210,7 @@
                 {{-- <small class="label pull-right bg-yellow">12</small> --}}
               </a>
             </li>
-            
+           
             <li class="header"></li>    
           </ul>
         </section>
@@ -227,93 +222,115 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Tambah Data
-            <small>Berita</small>
+            Cek Fakta
+            <small>Control Panel </small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Berita</li>
+            <li class="active">Laporan</li>
           </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
           <div class="row">
+            <div class="col-md-3">
+            </div><!-- /.col -->
             <div class="col-md-12">
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  
-                  {{-- <div class="box-tools pull-right">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools pull-right">
                     <div class="has-feedback">
                       <input type="text" class="form-control input-sm" placeholder="Search Mail"/>
                       <span class="glyphicon glyphicon-search form-control-feedback"></span>
                     </div>
-                  </div><!-- /.box-tools --> --}}
+                  </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body no-padding">
-                 
-                  <h2 class="text-center"><b>Edit data</b></h2>
-                  <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-12">
-                      <!-- general form elements -->
-                      <div class="box box-primary">
-                        <div class="box-header">
-                        </div><!-- /.box-header -->
-                        <!-- form start -->
-                        <form role="form" action="{{route('update', $key)}}" method="post">
-                          @csrf
-                          @method('PUT')
+                  <div class="table-responsive mailbox-messages">
+                    <table class="table table-hover table-striped" >
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Link</th>
+                          <th scope="col">Image</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @php
+                            $no = 1;
+                        @endphp
 
-                          <div class="box-body">
-                            <div class="form-group">
-                              <label for="exampleInputJudul">Judul Berita</label>
-                              <input type="text" value="{{ $edit_data['judul'] }}" name= "judul" class="form-control" id="exampleInputJudul" placeholder="Masukan Judul">
-                            </div>
+                          @forelse ($laporan as $key => $row)
+                              <tr>
+                                  <th scope="row">{{ $no++ }}</th>
+                                  <td> {{ $row['name'] }} </td>
+                                  <td> {{ $row['title'] }} </td>
+                                  <td> {{ $row['link'] }} </td>
+                                  <td> {{ $row['image'] }} </td>
+                                  <td> {{ $row['status'] }} </td>
+                                  <td> {{ $row['image'] }} </td>
+                                  
+                                  
+                                  <td>
+                                     <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#exampleModalLong">Cek Berita  </button>
 
-                            <div class="form-group">
-                              <label for="exampleInputLink">Judul Berita</label>
-                              <input type="url" value="{{ $edit_data['link'] }}" name= "link" class="form-control" id="exampleInputLink" placeholder="Masukan Judul">
-                            </div>
-                              
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputGambar">Gambar</label>
-                              <input type="url" value="{{ $edit_data['gambar']}}" name="gambar"  class="form-control" id="exampleInputGambar">
-                            </div>
-
-                            
-                          </div><!-- /.box-body -->
-        
-                          <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="berita" class="btn btn-primary">Cencel</a>
-                          </div>
-                        </form>
-                      </div><!-- /.box -->
-        
-                    </div><!--/.col (left) -->
-                    <!-- right column -->
-                  </div> 
-
+                                      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle"><b>Cek Fakta</b></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <b>Apakah Berita ini Hoax</b>
+                                            </div>
+                                            <form action="{{ route('cekBerita',''.$key.'') }}" method="POST">
+                                              @csrf
+                                                  <div class="modal-footer">
+                                                    <button type="submit" name="cekBerita" value="Fakta" class="btn btn-warning">Tidak</button>
+                                                    <button type="submit" name="cekBerita" value="Hoax"  class="btn btn-primary">Ya</button>
+                                                  </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                        </div>
+                                  </td>
+                            </tr>
+                            @empty
+                              <tr>
+                                <td colspan="5" class="text-center">Tidak ada data</td>
+                              </tr>
+                          @endforelse
+                      </tbody>
+                    </table><!-- /.table -->
+                  </div><!-- /.mail-box-messages -->
                 </div><!-- /.box-body -->
                 <div class="box-footer no-padding">
                   <div class="mailbox-controls">
                     <!-- Check all button -->
-                    {{-- <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>                     --}}
-                    {{-- <div class="btn-group">
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>                    
+                    <div class="btn-group">
                       <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
                       <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
                       <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                    </div><!-- /.btn-group --> --}}
-                    {{-- <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button> --}}
-                    {{-- <div class="pull-right">
-                     
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
                       <div class="btn-group">
                         <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
                         <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
                       </div><!-- /.btn-group -->
-                    </div><!-- /.pull-right --> --}}
+                    </div><!-- /.pull-right -->
                   </div>
                 </div>
               </div><!-- /. box -->
@@ -323,12 +340,11 @@
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          {{-- <b>Version</b> 2.0 --}}
+          <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2021-2022 <a href="http://almsaeedstudio.com">Berita</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
     <!-- jQuery 2.1.3 -->
     <script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>
@@ -345,9 +361,6 @@
     <!-- iCheck -->
     <script src="../../plugins/iCheck/icheck.min.js" type="text/javascript"></script>
     <!-- Page Script -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
-    
     <script>
       $(function () {
         //Enable iCheck plugin for checkboxes
@@ -389,15 +402,7 @@
             $this.toggleClass("fa-star-o");
           }
         });
-
-        $('#summernote').summernote({
-            placeholder: 'inwepo.co',
-            tabsize: 2,
-            height: 100
-          });
-        var artikel = document.getElementById('summernote')
       });
-      
     </script>
   </body>
 </html>

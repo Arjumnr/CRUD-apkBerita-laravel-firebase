@@ -282,7 +282,7 @@
               <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>AdminLTE</p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -312,17 +312,12 @@
               </a>
             </li>
             <li>
-              <a href="/komentar/">
-                <i class="fa fa-comments-o" aria-hidden="true"></i> <span>Komentar</span>
+              <a href="/laporan/">
+                <i class="fa fa-comments-o" aria-hidden="true"></i> <span>Laporan</span>
                 {{-- <small class="label pull-right bg-yellow">12</small> --}}
               </a>
             </li>
-            <li>
-              <a href="/cekfakta/">
-                <i class="fa fa-check" aria-hidden="true"></i> <span>Cek Fakta</span>
-                {{-- <small class="label pull-right bg-yellow">12</small> --}}
-              </a>
-            </li>
+           
             <li class="header"></li>    
           </ul>
         </section>
@@ -386,7 +381,7 @@
                           <td>
                             <a href="/berita/edit/{{ $key }}"><button class="btn btn-primary">Edit</button></a>
                             <a href="/berita/hapus/{{ $key }}"><button class="btn btn-danger">Hapus</button></a>
-                        </td>
+                          </td>
                        </tr>
                       @empty
                         <tr>

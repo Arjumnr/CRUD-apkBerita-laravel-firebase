@@ -128,14 +128,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Baharuddin</span>
+                  <span class="hidden-xs">AdminLTE</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Baharuddin Pierce - Web Developer
+                      AdminLTE Pierce - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -176,7 +176,7 @@
               <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Baharuddin</p>
+              <p>AdminLTE</p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -206,17 +206,12 @@
               </a>
             </li>
             <li>
-              <a href="/komentar/">
-                <i class="fa fa-comments-o" aria-hidden="true"></i> <span>Komentar</span>
+              <a href="/laporan/">
+                <i class="fa fa-comments-o" aria-hidden="true"></i> <span>Laporan</span>
                 {{-- <small class="label pull-right bg-yellow">12</small> --}}
               </a>
             </li>
-            <li>
-              <a href="/cekfakta/">
-                <i class="fa fa-check" aria-hidden="true"></i> <span>Cek Fakta</span>
-                {{-- <small class="label pull-right bg-yellow">12</small> --}}
-              </a>
-            </li>
+           
             <li class="header"></li>    
           </ul>
         </section>
@@ -279,7 +274,7 @@
         
                           <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="/berita/berita" class="btn btn-primary">Cencel</a>
+                            <a href="/berita" class="btn btn-primary">Cencel</a>
                           </div>
                         </form>
                       </div><!-- /.box -->

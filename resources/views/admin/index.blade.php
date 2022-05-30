@@ -241,14 +241,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs">AdminLTE</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Alexander Pierce - Web Developer
+                      AdminLTE - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -289,7 +289,7 @@
               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Baharuddin</p>
+              <p>AdminLTE</p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -308,7 +308,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
-              <a href="/dasdboard">
+              <a href="/">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
@@ -319,17 +319,12 @@
               </a>
             </li>
             <li>
-              <a href="/komentar/">
-                <i class="fa fa-comments-o" aria-hidden="true"></i> <span>Komentar</span>
+              <a href="/laporan/">
+                <i class="fa fa-comments-o" aria-hidden="true"></i> <span>Laporan</span>
                 <small class="label pull-right bg-yellow"></small>
               </a>
             </li>
-            <li>
-              <a href="/cekfakta/">
-                <i class="fa fa-check" aria-hidden="true"></i> <span>Cek Fakta</span>
-                {{-- <small class="label pull-right bg-yellow">12</small> --}}
-              </a>
-            </li>
+           
             <li class="header"></li>    
           </ul>
         </section>
@@ -359,8 +354,8 @@
               <div class="small-box bg-aqua">
                 <div class="inner">
 
-                  //changeeee
-                  <h3>{{ 0 }}</h3>
+                  
+                  <h3>{{ $jberita }}</h3>
                   <p>Jumlah Berita</p>
                 </div>
                 <div class="icon">
@@ -373,41 +368,16 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>{{ 0 }}<sup style="font-size: 20px"></sup></h3>
-                  <p>Komentar</p>
+                  <h3>{{ $jlaporan}}<sup style="font-size: 20px"></sup></h3>
+                  <p>Laporan</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-comments-o" aria-hidden="true"></i>
                 </div>
-                <a href="/komentar/komentars" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-            {{-- <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>44</h3>
-                  <p>User Registrations</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col --> --}}
-            {{-- <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3>65</h3>
-                  <p>Unique Visitors</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col --> --}}
+            
           </div><!-- /.row -->
           <!-- Main row -->
           <div class="row">
@@ -469,7 +439,7 @@
                     <p class="message">
                       <a href="#" class="name">
                         <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                        Alexander Pierce
+                        AdminLTE
                       </a>
                       I would like to meet you to discuss the latest news about
                       the arrival of the new theme. They say it is going to be one the
