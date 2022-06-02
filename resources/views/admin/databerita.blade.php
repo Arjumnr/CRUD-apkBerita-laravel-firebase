@@ -24,7 +24,15 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
     <![endif]-->
+
+    <style>
+       
+       th{
+        text-align: center;
+        }
+    </style>
   </head>
   <body class="skin-blue">
     <div class="wrapper">
@@ -358,12 +366,13 @@
                   <div class="table-responsive mailbox-messages">
                     <table class="table table-hover table-striped">
                       <thead>
-                        <tr>
-                          <th scope="col">No</th>
-                          <th scope="col">Judul </th>
-                          <th scope="col">Gambar</th>
-                          <th scope="col">Tanggal Dibuat</th>
-                          <th scope="col">Aksi</th>
+                        <tr >
+                          <th  >No</th>
+                          <th  >Judul </th>
+                          <th  >Gambar</th>
+                          <th  >Tanggal Dibuat</th>
+                          <th  >Aksi</th>
+    
                         </tr>
                       </thead>
 
