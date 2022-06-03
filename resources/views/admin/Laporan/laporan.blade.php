@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Admin | Cek Fakta</title>
+    <title>Admin | Laporan | Cek Berita</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -31,7 +31,12 @@
        
       th{
        text-align: center;
-       }
+       } 
+       tbody{
+        
+       } 
+       
+      
    </style> 
   </head>
   <body class="skin-blue">
@@ -188,7 +193,7 @@
             </div>
           </div>
           <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
+          <form action="#"  class="sidebar-form">
             <div class="input-group">
               <input type="text" name="q" class="form-control" placeholder="Search..."/>
               <span class="input-group-btn">
@@ -229,7 +234,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Cek Fakta
+            Laporan/ Cek Berita
             <small>Control Panel </small>
           </h1>
           <ol class="breadcrumb">
@@ -255,8 +260,8 @@
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body no-padding">
-                  <div class="table-responsive mailbox-messages">
-                    <table class="table table-hover table-striped" >
+                  <div  class="table-responsive mailbox-messages">
+                    <table class="table table-striped "  >
                       <thead>
                         <tr>
                           <th scope="col">No</th>
@@ -265,11 +270,10 @@
                           <th scope="col">Link</th>
                           <th scope="col">Image</th>
                           <th scope="col">Status</th>
-                          <th scope="col">Title</th>
                           <th scope="col">Aksi</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody >
                         @php
                             $no = 1;
                         @endphp
@@ -281,38 +285,29 @@
                                   <td> {{ $row['title'] }} </td>
                                   <td> {{ $row['link'] }} </td>
                                   <td> {{ $row['image'] }} </td>
-                                  <td> {{ $row['status'] }} </td>
-                                  <td> {{ $row['image'] }} </td>
-                                  
+                                  <td class=" btn-success btn-mg"><br/>
+                                    <br/> {{ $row['status'] }} </td>
                                   
                                   <td>
-                                     <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#exampleModalLong">Cek Berita  </button>
-
-                                      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle"><b>Cek Fakta</b></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
+                                     
+                                      <form action="{{ route('cekBerita',''.$key.'') }}" method="POST">                      
+                                        @csrf
+                                        @method('PUT')
+                                            <div class="modal-footer" >
+                                              <button type="submit" name="cekBerita" value="Fakta" class="btn btn-warning btn-mg">FAKTA</button>
+                                                <br/>
+                                                <br/>
+                                              <button type="submit" name="cekBerita" value="Hoax"  class="btn btn-primary btn-mg">HOAX </button>
                                             </div>
-                                            <div class="modal-body">
-                                              <b>Apakah Berita ini Hoax</b>
-                                            </div>
-                                            <form action="{{ route('cekBerita',''.$key.'') }}" method="POST">
-                                              @csrf
-                                                  <div class="modal-footer">
-                                                    <button type="submit" name="cekBerita" value="Fakta" class="btn btn-warning">Tidak</button>
-                                                    <button type="submit" name="cekBerita" value="Hoax"  class="btn btn-primary">Ya</button>
-                                                  </div>
-                                            </form>
-                                            </div>
-                                        </div>
-                                        </div>
+                                      </form>
+                                      
                                   </td>
                             </tr>
+
+                            
                             @empty
+
+                            
                               <tr>
                                 <td colspan="5" class="text-center">Tidak ada data</td>
                               </tr>

@@ -23,19 +23,29 @@ class LaporanController extends Controller
         if($laporan == null){
             $laporan = [];
         }
-    
         return view('admin.laporan.laporan' , compact('laporan'));
     }
 
-    public function cekBerita(Request $request, $id){
-        $key = $id;
+    public function cekBerita(Request $request, $idd){
+        $key = $idd;
+       
         $input = [];
         $input['status']=$request->cekBerita;
        
-        $res_update_date = $this->database->getReference('Laporan')->getChild($key)->update($input);
+        $res_update_date = $this->database->getReference($this->tableName)->getChild($key)->update($input);
         if($res_update_date){
             return redirect()->route('laporan_data')->with('success', 'Data Berhasil Diupdate');
         }
 
     }
+
+    public function cek(){
+        $laporan = $this->database->getReference('Laporan')->getValue();
+        if($laporan == null){
+            $laporan = [];
+        }
+        return view('admin.laporan.cek' , compact('laporan'));
+    }
+
+    
 }

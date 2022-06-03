@@ -32,6 +32,7 @@
        th{
         text-align: center;
         }
+       
     </style>
   </head>
   <body class="skin-blue">
@@ -363,15 +364,15 @@
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body no-padding">
-                  <div class="table-responsive mailbox-messages">
+                  <div style="overflow-x:auto; class="table-responsive mailbox-messages">
                     <table class="table table-hover table-striped">
                       <thead>
                         <tr >
-                          <th  >No</th>
-                          <th  >Judul </th>
-                          <th  >Gambar</th>
-                          <th  >Tanggal Dibuat</th>
-                          <th  >Aksi</th>
+                          <th scope="col">No</th>
+                          <th scope="col">Judul </th>
+                          <th scope="col">Gambar</th>
+                          <th scope="col">Tanggal Dibuat</th>
+                          <th scope="col">Aksi</th>
     
                         </tr>
                       </thead>

@@ -19,12 +19,12 @@ class BeritaController extends Controller
         if($berita == null){
             $berita = [];
         }
-        return view('admin.databerita' , compact('berita'));
+        return view('admin.berita.databerita' , compact('berita'));
     }
 
     public function create()
     {
-        return view('admin.tambah_berita'); 
+        return view('admin.berita.tambah_berita'); 
     }
 
     public function update(Request $request, $id){
@@ -46,8 +46,7 @@ class BeritaController extends Controller
 
     }
 
-    public function delete($id){
-        
+    public function delete($id){ 
         $delete_berita = $this->database->getReference($this->tableName)->getChild($id)->remove();
         if($delete_berita){
             return redirect()->route('dataBerita')->with('success', 'Berita berhasil dihapus');
@@ -61,7 +60,7 @@ class BeritaController extends Controller
         $key = $id;
         $edit_data = $this->database->getReference($this->tableName)->getChild($key)->getValue(); 
         if($edit_data){
-            return view('admin.edit_berita', compact('edit_data' , 'key'));
+            return view('admin.berita.edit_berita', compact('edit_data' , 'key'));
         }else{
             return redirect()->route('dataBerita');
         }
